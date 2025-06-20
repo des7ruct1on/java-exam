@@ -32,7 +32,7 @@ public class KafkaMessageService {
         props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "1");
 
         try (KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props)) {
-            consumer.subscribe(Collections.singletonList(topic));
+            consumer.subscribe(Arrays.asList(topic));
 
             ConsumerRecords<String, String> records;
             int attempts = 0;
